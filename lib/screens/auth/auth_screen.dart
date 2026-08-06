@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../theme/app_theme.dart';
-import '../home_screen.dart';
+import '../main_navigation_screen.dart';
 import 'widgets/google_sign_in_button.dart';
 
 class AuthScreen extends StatefulWidget {
@@ -59,7 +59,7 @@ class _AuthScreenState extends State<AuthScreen> with SingleTickerProviderStateM
 
     // Navigate to Main Screen upon successful sign-in
     Navigator.of(context).pushReplacement(
-      MaterialPageRoute(builder: (_) => const HomeScreen()),
+      MaterialPageRoute(builder: (_) => const MainNavigationScreen()),
     );
   }
 
