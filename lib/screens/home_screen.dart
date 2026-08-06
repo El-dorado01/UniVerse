@@ -129,77 +129,35 @@ class _CampusHeader extends StatelessWidget {
         color: Colors.white,
         border: Border(bottom: BorderSide(color: Color(0xFFE2E8F0))),
       ),
-      child: Column(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Row(
-            children: [
-              // Logo & Campus Badge
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    'UniVerse',
-                    style: TextStyle(
-                      fontFamily: kLogoFontFamily,
-                      fontSize: 24,
-                      color: AppColors.primary,
-                    ),
-                  ),
-                  Row(
-                    children: const [
-                      Icon(
-                        Icons.location_on_rounded,
-                        size: 11,
-                        color: AppColors.primary,
-                      ),
-                      SizedBox(width: 3),
-                      Text(
-                        'Bayero University Kano',
-                        style: TextStyle(
-                          fontFamily: kBodyFontFamily,
-                          fontSize: 11,
-                          fontWeight: FontWeight.w600,
-                          color: AppColors.slate,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              const Spacer(),
+          // Logo Only
+          const Text(
+            'UniVerse',
+            style: TextStyle(
+              fontFamily: kLogoFontFamily,
+              fontSize: 26,
+              color: AppColors.primary,
+              letterSpacing: 0.2,
+            ),
+          ),
 
-              // Notification Bell & Search
-              Row(
-                children: [
-                  IconButton(
-                    onPressed: () {},
-                    icon: const Icon(Icons.search_rounded, size: 22),
-                    color: const Color(0xFF334155),
-                  ),
-                  Stack(
-                    children: [
-                      IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.notifications_none_rounded, size: 23),
-                        color: const Color(0xFF334155),
-                      ),
-                      Positioned(
-                        right: 12,
-                        top: 12,
-                        child: Container(
-                          width: 8,
-                          height: 8,
-                          decoration: const BoxDecoration(
-                            color: Color(0xFFEF4444),
-                            shape: BoxShape.circle,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+          // User Avatar on Right
+          GestureDetector(
+            onTap: () {},
+            child: CircleAvatar(
+              radius: 19,
+              backgroundColor: AppColors.primary.withValues(alpha: 0.12),
+              backgroundImage: const NetworkImage(
+                'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=250',
               ),
-            ],
+              child: const Icon(
+                Icons.person,
+                color: AppColors.primary,
+                size: 20,
+              ),
+            ),
           ),
         ],
       ),
